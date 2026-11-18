@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0B0D11;
+    color: #F1F5F9;
+  }
+
+  .font-mono-tc {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom NLE subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F131A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A3241;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B465B;
+}
+
+/* Touch manipulation for timeline and slider precision */
+.touch-none-x {
+  touch-action: pan-y;
+}
+
+/* Range input styling for NLE controls */
+input[type="range"].nle-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].nle-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: #252C3A;
+}
+
+input[type="range"].nle-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  background: #3B82F6;
+  border: 2px solid #0B0D11;
+  margin-top: -5px;
+  transition: transform 0.12s ease;
+}
+
+input[type="range"].nle-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
